@@ -1,0 +1,213 @@
+/* Volunteer data portal */
+
+.data-page {
+    padding: 64px 40px 90px;
+    background: #fbfaf6;
+    color: #4f6f43;
+}
+
+.data-grid {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.data-grid-card {
+    position: relative;
+    padding: 28px;
+    border: 1px solid rgba(79, 111, 67, 0.14);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(72, 91, 63, 0.06);
+}
+
+.data-grid-card h3 {
+    margin: 0;
+    color: #486640;
+    font-size: 1.45rem;
+    line-height: 1.15;
+}
+
+.data-grid-card h4 {
+    margin: 8px 0 5px;
+    color: #486640;
+}
+
+.data-grid-card p {
+    line-height: 1.65;
+}
+
+.data-grid-card ul {
+    margin: 18px 0 0;
+    padding-left: 20px;
+}
+
+.data-grid-card li {
+    margin-bottom: 9px;
+}
+
+.data-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.data-card-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    font-size: 1.25rem;
+}
+
+/* Grid sizing */
+
+.intro-card {
+    grid-column: span 8;
+    min-height: 280px;
+    background: #e7efd9;
+}
+
+.mergin-card {
+    grid-column: span 4;
+    min-height: 280px;
+    background: #e9b7bd;
+    color: #553f43;
+    text-decoration: none;
+    border: 1px dashed #0f0f0f;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.mergin-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(92, 65, 70, 0.14);
+}
+
+.mergin-card h3,
+.mergin-card p {
+    color: #553f43;
+}
+
+.mergin-arrow {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    font-size: 2rem;
+}
+
+.readonly-card {
+    grid-column: span 4;
+    background: #f6d9dd;
+}
+
+.contributor-card {
+    grid-column: span 4;
+    background: #dce8cd;
+}
+
+.offline-card {
+    grid-column: span 4;
+    background: #f3e5bd;
+}
+
+.workflow-card {
+    grid-column: span 7;
+    background: #e9e7e1;
+}
+
+.records-card {
+    grid-column: span 5;
+    background: #d9e6d2;
+    border: 1px dashed #9ba099;
+}
+
+.quality-card {
+    grid-column: span 12;
+    background: #f3e5bd;
+    border: 1px dashed #9ba099;
+}
+
+/* Accordion */
+
+.colour-accordion {
+    --bs-accordion-border-width: 0;
+    --bs-accordion-border-radius: 18px;
+    --bs-accordion-inner-border-radius: 18px;
+    --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.colour-accordion .accordion-item {
+    margin-bottom: 12px;
+    border: 1px dashed #9ba099;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.colour-accordion .accordion-button {
+    padding: 18px 20px;
+    border: 0;
+    box-shadow: none;
+    color: #405a39;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.colour-accordion .accordion-button:not(.collapsed) {
+    color: #405a39;
+    box-shadow: none;
+}
+
+.colour-accordion .accordion-body {
+    padding: 0 22px 22px;
+    color: #496144;
+}
+
+.colour-accordion .accordion-body p:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-pink,
+.accordion-pink .accordion-button,
+.accordion-pink .accordion-body {
+    background: #f4d4d9;
+}
+
+.accordion-green,
+.accordion-green .accordion-button,
+.accordion-green .accordion-body {
+    background: #dce9d0;
+}
+
+.accordion-blush,
+.accordion-blush .accordion-button,
+.accordion-blush .accordion-body {
+    background: #f8e4e2;
+}
+
+.accordion-sage,
+.accordion-sage .accordion-button,
+.accordion-sage .accordion-body {
+    background: #cfdcbd;
+}
+
+.accordion-rose,
+.accordion-rose .accordion-button,
+.accordion-rose .accordion-body {
+    background: #e9c3c8;
+}
+
+.accordion-moss,
+.accordion-moss .accordion-button,
+.accordion-moss .accordion-body {
+    background: #bfcfae;
+}

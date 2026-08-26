@@ -1,0 +1,1034 @@
+/* =========================================================
+   MOBILE-FIRST OVERRIDES
+   Load after all page-specific styles.
+   File: assets/90_mobile.css
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Tablet / narrow desktop
+   --------------------------------------------------------- */
+
+@media (max-width: 820px) {
+    html,
+    body,
+    #react-entry-point {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Shared shell */
+    .topbar {
+        height: auto;
+        min-height: 72px;
+        padding: 8px 14px;
+        gap: 8px;
+    }
+
+    .logo {
+        flex: 0 0 auto;
+        width: 58px;
+        height: 58px;
+    }
+
+    .nav-menu {
+        min-width: 0;
+        margin-left: auto;
+        gap: 8px;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-link {
+        flex: 0 0 auto;
+        padding: 11px 7px;
+        font-size: 0.86rem;
+    }
+
+    .dot {
+        display: none;
+    }
+
+    .home-btn {
+        flex: 0 0 auto;
+        padding: 9px 16px;
+        font-size: 0.82rem;
+    }
+
+    .page-content {
+        min-height: calc(100vh - 74px);
+        padding: 24px 18px 84px;
+    }
+
+    .description-text {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    /* -----------------------------------------------------
+       Volunteer / data portal
+       ----------------------------------------------------- */
+
+    .data-page {
+        padding: 26px 14px 70px;
+    }
+
+    .data-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .data-grid-card,
+    .intro-card,
+    .mergin-card,
+    .readonly-card,
+    .contributor-card,
+    .offline-card,
+    .workflow-card,
+    .records-card,
+    .quality-card {
+        width: 100%;
+        min-height: 0;
+        box-sizing: border-box;
+        padding: 20px;
+        border-radius: 19px;
+    }
+
+    .intro-card {
+        order: 1;
+    }
+
+    .mergin-card {
+        order: 2;
+        min-height: 155px;
+    }
+
+    .readonly-card {
+        order: 3;
+    }
+
+    .contributor-card {
+        order: 4;
+    }
+
+    .offline-card {
+        order: 5;
+    }
+
+    .workflow-card {
+        order: 6;
+    }
+
+    .records-card {
+        order: 7;
+    }
+
+    .quality-card {
+        order: 8;
+    }
+
+    .data-grid-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .data-grid-card p {
+        line-height: 1.55;
+    }
+
+    .data-card-heading {
+        margin-bottom: 12px;
+    }
+
+    .data-card-icon {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 1.05rem;
+    }
+
+    /* Make the existing accordion feel like the primary mobile UI. */
+    .colour-accordion {
+        margin-top: 10px;
+    }
+
+    .colour-accordion .accordion-item {
+        margin-bottom: 8px;
+        border-radius: 14px;
+    }
+
+    .colour-accordion .accordion-button {
+        min-height: 52px;
+        padding: 14px 16px;
+        font-size: 0.94rem;
+        line-height: 1.3;
+    }
+
+    .colour-accordion .accordion-body {
+        padding: 0 16px 16px;
+        font-size: 0.91rem;
+        line-height: 1.55;
+    }
+
+    /* -----------------------------------------------------
+       About page
+       ----------------------------------------------------- */
+
+    .about-hero {
+        width: calc(100% - 28px);
+        gap: 18px;
+        padding: 32px 0 24px;
+    }
+
+    .about-hero::before {
+        top: 12px;
+        left: -22px;
+        width: 64px;
+        height: 64px;
+    }
+
+    .about-hero-title {
+        font-size: clamp(2.35rem, 11vw, 3.3rem);
+        line-height: 1.02;
+    }
+
+    .about-hero-text {
+        font-size: 0.98rem;
+        line-height: 1.62;
+    }
+
+    .about-stat-pill {
+        max-width: 100%;
+        padding: 11px 15px;
+    }
+
+    .featured-journeys-section {
+        padding: 36px 14px 62px;
+    }
+
+    .featured-journeys-heading {
+        margin-bottom: 20px;
+    }
+
+    .about-section-title {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .about-section-description {
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    .journey-heading-prompt {
+        margin-top: 14px;
+        padding: 8px 12px;
+        font-size: 0.72rem;
+    }
+
+    .featured-journeys-chart {
+        padding: 14px 12px 10px;
+        border-radius: 20px;
+    }
+
+    .featured-journey-row {
+        min-height: 0;
+        margin-bottom: 10px;
+        padding: 12px;
+        border-color: #dfe8dc;
+        border-radius: 15px;
+    }
+
+    .featured-journey-label {
+        padding: 0 0 8px;
+    }
+
+    .featured-journey-name {
+        font-size: 1rem;
+    }
+
+    .featured-journey-track {
+        height: 36px;
+    }
+
+    .featured-journey-preview {
+        border-radius: 20px;
+    }
+
+    .featured-map-link {
+        margin-top: 18px;
+        padding: 17px 18px;
+        border-radius: 18px;
+    }
+
+    /* -----------------------------------------------------
+       Projects / map
+       ----------------------------------------------------- */
+
+    .projects-hero {
+        width: calc(100% - 28px);
+        gap: 18px;
+        padding: 32px 0 28px;
+    }
+
+    .projects-hero::before {
+        top: 12px;
+        left: -22px;
+        width: 64px;
+        height: 64px;
+    }
+
+    .projects-hero-title {
+        font-size: clamp(2.35rem, 11vw, 3.3rem);
+    }
+
+    .projects-hero-description {
+        font-size: 0.98rem;
+        line-height: 1.62;
+    }
+
+    .projects-map-section {
+        padding: 32px 14px 50px;
+    }
+
+    .projects-detail-section {
+        padding: 40px 14px 70px;
+    }
+
+    .projects-map-card {
+        padding: 8px;
+        border-radius: 20px;
+    }
+
+    .qgis-map-wrapper {
+        height: min(62vh, 520px);
+        min-height: 390px;
+        border-radius: 15px;
+    }
+
+    .projects-map-note {
+        padding: 12px 7px 5px;
+        font-size: 0.8rem;
+    }
+
+    .project-detail-panel {
+        margin: 0;
+        padding: 20px 16px;
+        border-radius: 20px;
+    }
+
+    .project-detail-heading h3 {
+        font-size: clamp(1.65rem, 8vw, 2.25rem);
+    }
+
+    .project-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .project-detail-grid {
+        gap: 9px;
+    }
+
+    .project-detail-row {
+        padding: 14px 15px;
+        border-radius: 13px;
+    }
+
+    .project-summary-row {
+        gap: 9px;
+        column-gap: 9px;
+    }
+
+    .project-summary-item {
+        padding: 14px 15px;
+        border: 1px solid #e3ebe0;
+        border-radius: 14px;
+        background: #f8faf6;
+    }
+
+    .planting-species-section {
+        margin-top: 26px;
+        padding-top: 20px;
+    }
+
+    .planting-species-list {
+        flex-wrap: nowrap;
+        gap: 10px;
+        padding-bottom: 9px;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scroll-snap-type: x proximity;
+        scrollbar-width: thin;
+    }
+
+    .planting-species-image {
+        flex: 0 0 76px;
+        width: 76px;
+        height: 76px;
+        scroll-snap-align: start;
+    }
+
+    .project-timeline {
+        margin: 24px 0 20px;
+    }
+
+    /* -----------------------------------------------------
+       Photo scrollers
+       ----------------------------------------------------- */
+
+    .planting-photo-story {
+        margin: 20px 0 24px;
+    }
+
+    .photo-story-track {
+        grid-auto-columns: min(84vw, 310px);
+        gap: 11px;
+    }
+
+    .featured-preview-photo-track {
+        grid-auto-columns: min(86vw, 320px);
+    }
+}
+
+/* ---------------------------------------------------------
+   Phone
+   --------------------------------------------------------- */
+
+@media (max-width: 620px) {
+    /* Volunteer cards: concise stack, accordion-first */
+    .data-page {
+        padding-inline: 10px;
+    }
+
+    .data-grid {
+        gap: 10px;
+    }
+
+    .data-grid-card,
+    .intro-card,
+    .mergin-card,
+    .readonly-card,
+    .contributor-card,
+    .offline-card,
+    .workflow-card,
+    .records-card,
+    .quality-card {
+        padding: 16px;
+        border-radius: 16px;
+        box-shadow: none;
+    }
+
+    .mergin-card {
+        min-height: 130px;
+    }
+
+    .mergin-arrow {
+        top: 14px;
+        right: 16px;
+        font-size: 1.5rem;
+    }
+
+    .colour-accordion .accordion-button {
+        min-height: 54px;
+        padding: 15px 14px;
+    }
+
+    /* Project map uses most of the phone viewport, but leaves context visible. */
+    .qgis-map-wrapper {
+        height: 58vh;
+        min-height: 380px;
+        max-height: 500px;
+    }
+
+    .projects-map-heading {
+        margin-bottom: 16px;
+    }
+
+    .projects-section-title {
+        font-size: clamp(1.9rem, 10vw, 2.55rem);
+    }
+
+    .projects-map-status {
+        margin-top: 10px;
+    }
+
+    .projects-map-note {
+        line-height: 1.45;
+    }
+
+    .project-summary-row {
+        display: flex;
+        gap: 8px;
+        padding-bottom: 6px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-inline: contain;
+    }
+
+    .project-summary-item {
+        flex: 0 0 min(78vw, 260px);
+        scroll-snap-align: start;
+    }
+
+    /* -----------------------------------------------------
+       Tree guide: phone-native rather than mini desktop
+       ----------------------------------------------------- */
+
+    .tree-guide-page {
+        width: calc(100% - 20px);
+        padding: 14px 0 58px;
+    }
+
+    .tree-guide-hero {
+        gap: 18px;
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
+
+    .tree-guide-hero h1 {
+        font-size: clamp(2.3rem, 12vw, 3.25rem);
+    }
+
+    .tree-guide-intro {
+        margin-top: 14px;
+        font-size: 0.96rem;
+        line-height: 1.58;
+    }
+
+    .tree-guide-stat {
+        padding: 11px 13px;
+        gap: 9px;
+        border-radius: 14px;
+    }
+
+    .tree-guide-stat-number {
+        font-size: 2rem;
+    }
+
+    .tree-guide-stat-label {
+        font-size: 0.62rem;
+    }
+
+    .tree-guide-picker-section,
+    .tree-guide-expanded-section {
+        margin-top: 14px;
+        padding: 20px 12px;
+        border-radius: 18px;
+    }
+
+    .tree-guide-section-heading {
+        margin-bottom: 16px;
+    }
+
+    .tree-guide-section-heading h2 {
+        font-size: 1.55rem;
+    }
+
+    .tree-guide-section-heading p {
+        margin-top: 7px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Species cards become swipeable, compact horizontal tiles. */
+    .tree-selector-grid {
+        gap: 10px;
+        margin-inline: 0;
+        padding: 2px 2px 12px;
+        scroll-padding-inline: 2px;
+    }
+
+    .tree-selector-card {
+        flex: 0 0 min(78vw, 265px);
+        display: grid;
+        grid-template-columns: 76px minmax(0, 1fr);
+        grid-template-rows: auto;
+        align-items: center;
+        min-height: 108px;
+        padding: 12px;
+        border-radius: 16px;
+    }
+
+    .tree-selector-image-wrap {
+        height: 76px;
+    }
+
+    .tree-selector-image {
+        max-width: 68px;
+        max-height: 72px;
+    }
+
+    .tree-selector-copy {
+        padding-left: 10px;
+    }
+
+    .tree-selector-category {
+        margin-top: 0;
+        font-size: 0.56rem;
+    }
+
+    .tree-selector-name {
+        margin-top: 3px;
+        font-size: 1.05rem;
+    }
+
+    .tree-selector-scientific {
+        font-size: 0.76rem;
+    }
+
+    .tree-selector-action {
+        right: 12px;
+        bottom: 10px;
+        font-size: 0.57rem;
+    }
+
+    /* Selected tree: photo first, then left-aligned identity and controls. */
+    .selected-tree-heading {
+        gap: 16px;
+        margin-top: 0;
+    }
+
+    .selected-tree-photo-wrap {
+        min-height: 220px;
+        border-radius: 17px;
+        box-shadow: none;
+    }
+
+    .selected-tree-heading-copy {
+        text-align: left;
+    }
+
+    .selected-tree-heading-copy .expanded-tree-name {
+        font-size: clamp(2.15rem, 12vw, 3.15rem);
+    }
+
+    .selected-tree-heading-copy .tree-variant-controls {
+        width: 100%;
+        margin-inline: 0;
+    }
+
+    .tree-heading-source-note {
+        margin: 15px 0 0;
+        font-size: 0.77rem;
+        line-height: 1.5;
+    }
+
+    .selected-tree-photo-hint {
+        opacity: 1;
+        transform: none;
+        right: 10px;
+        bottom: 10px;
+        padding: 6px 8px;
+        font-size: 0.58rem;
+    }
+
+    .tree-variant-controls {
+        grid-template-columns: 40px minmax(0, 1fr) 40px;
+        gap: 7px;
+        margin-top: 13px;
+    }
+
+    .tree-variant-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tree-variant-count {
+        margin-bottom: 5px;
+        font-size: 0.6rem;
+    }
+
+    .tree-variant-pills {
+        gap: 6px;
+        padding-bottom: 4px;
+    }
+
+    .tree-variant-pill {
+        padding: 6px 9px;
+        font-size: 0.68rem;
+    }
+
+    /* The "grove" becomes a compact list of tappable information cards.
+       We retain the canopy shape/color very subtly, but remove tall trunks,
+       shadows, overlaps and hover-only behavior. */
+    .grove-guide {
+        padding: 0 0 28px;
+        overflow: visible;
+    }
+
+    .grove-heading {
+        align-items: flex-start;
+        max-width: none;
+        margin: 0 0 16px;
+        text-align: left;
+    }
+
+    .grove-heading-marker {
+        max-width: 68px;
+        max-height: 68px;
+        margin: 0 0 6px;
+    }
+
+    .grove-heading .expanded-tree-name {
+        font-size: clamp(2rem, 11vw, 2.8rem);
+    }
+
+    .rewilding-grove {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        min-height: 0;
+        padding: 0;
+    }
+
+    .rewilding-grove::before {
+        display: none;
+    }
+
+    .grove-info-tree,
+    .grove-tree-one,
+    .grove-tree-two,
+    .grove-tree-three,
+    .grove-tree-four,
+    .grove-tree-five {
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        margin: 0;
+        opacity: 1;
+        filter: none;
+        transform: none;
+        animation: none;
+    }
+
+    .rewilding-grove .grove-info-tree,
+    .rewilding-grove:hover .grove-info-tree {
+        opacity: 1;
+        filter: none;
+    }
+
+    .grove-tree-canopy,
+    .grove-tree-one .grove-tree-canopy,
+    .grove-tree-two .grove-tree-canopy,
+    .grove-tree-three .grove-tree-canopy,
+    .grove-tree-four .grove-tree-canopy,
+    .grove-tree-five .grove-tree-canopy {
+        min-height: 0;
+        padding: 16px 16px 15px;
+        border-radius: 16px;
+        box-shadow: none;
+        transform: none;
+        background: #f3f7f1;
+    }
+
+    .grove-info-tree:hover .grove-tree-canopy,
+    .rewilding-grove.active-tree-1 .grove-tree-one .grove-tree-canopy,
+    .rewilding-grove.active-tree-2 .grove-tree-two .grove-tree-canopy,
+    .rewilding-grove.active-tree-3 .grove-tree-three .grove-tree-canopy,
+    .rewilding-grove.active-tree-4 .grove-tree-four .grove-tree-canopy,
+    .rewilding-grove.active-tree-5 .grove-tree-five .grove-tree-canopy {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .rewilding-grove.active-tree-1 .grove-tree-one .grove-tree-canopy,
+    .rewilding-grove.active-tree-2 .grove-tree-two .grove-tree-canopy,
+    .rewilding-grove.active-tree-3 .grove-tree-three .grove-tree-canopy,
+    .rewilding-grove.active-tree-4 .grove-tree-four .grove-tree-canopy,
+    .rewilding-grove.active-tree-5 .grove-tree-five .grove-tree-canopy {
+        border-color: #91aa87;
+        background: #e8f1e4;
+    }
+
+    .grove-tree-one h3,
+    .grove-tree-one p,
+    .grove-tree-two h3,
+    .grove-tree-two p,
+    .grove-tree-three h3,
+    .grove-tree-three p,
+    .grove-tree-four h3,
+    .grove-tree-four p,
+    .grove-tree-five h3,
+    .grove-tree-five p {
+        width: auto;
+        margin-left: 0;
+    }
+
+    .grove-tree-canopy-content,
+    .grove-tree-one .grove-tree-canopy-content,
+    .grove-tree-two .grove-tree-canopy-content,
+    .grove-tree-three .grove-tree-canopy-content,
+    .grove-tree-four .grove-tree-canopy-content,
+    .grove-tree-five .grove-tree-canopy-content {
+        width: 100%;
+        max-height: none;
+        margin: 0;
+        padding-right: 0;
+        overflow: visible;
+    }
+
+    .grove-tree-canopy h3 {
+        margin-bottom: 7px;
+        font-size: 1rem;
+    }
+
+    .grove-fact-list {
+        gap: 6px;
+    }
+
+    .grove-fact-list li {
+        padding-left: 15px;
+        font-size: 0.83rem;
+        line-height: 1.45;
+    }
+
+    .grove-tree-trunk,
+    .grove-tree-shadow,
+    .grove-ground {
+        display: none;
+    }
+
+    /* No hover dimming on touch layouts. */
+    .rewilding-grove:hover .grove-info-tree:hover {
+        opacity: 1;
+    }
+
+    .tree-photo-modal {
+        padding: 8px;
+    }
+
+    .tree-photo-modal-dialog {
+        width: 100%;
+        max-height: 94vh;
+        padding: 8px;
+        border-radius: 14px;
+    }
+
+    .tree-photo-modal-image {
+        max-height: calc(94vh - 16px);
+        border-radius: 10px;
+    }
+
+    .tree-photo-modal-close {
+        top: 7px;
+        right: 7px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 390px) {
+    .topbar {
+        padding-inline: 9px;
+    }
+
+    .logo {
+        width: 52px;
+        height: 52px;
+    }
+
+    .nav-link {
+        padding-inline: 6px;
+        font-size: 0.8rem;
+    }
+
+    .home-btn {
+        padding-inline: 12px;
+    }
+
+    .page-content {
+        padding-inline: 12px;
+    }
+
+    .tree-guide-page {
+        width: calc(100% - 14px);
+    }
+
+    .tree-guide-hero {
+        padding-inline: 15px;
+    }
+
+    .tree-guide-picker-section,
+    .tree-guide-expanded-section {
+        padding-inline: 10px;
+    }
+
+    .tree-selector-card {
+        flex-basis: 84vw;
+    }
+
+    .qgis-map-wrapper {
+        min-height: 350px;
+    }
+}
+
+/* Touch devices should not depend on hover to expose essential UI. */
+@media (hover: none) and (pointer: coarse) {
+    .selected-tree-photo-hint {
+        opacity: 1;
+        transform: none;
+    }
+
+    .tree-selector-card:hover,
+    .grove-info-tree:hover .grove-tree-canopy,
+    .photo-story-card:hover,
+    .featured-journey-row:hover {
+        transform: none;
+    }
+}
+
+/* =========================================================
+   MOBILE NAVIGATION DROPDOWN
+   Expected structure/classes:
+   .topbar
+     .logo
+     .mobile-nav-toggle
+     .nav-menu
+       .nav-link / .home-btn
+
+   Add .is-open to .nav-menu when the hamburger is toggled.
+   ========================================================= */
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+@media (max-width: 820px) {
+    .topbar {
+        position: relative;
+        z-index: 1000;
+        min-height: 72px;
+        padding: 8px 14px;
+        overflow: visible;
+    }
+
+    .mobile-nav-toggle {
+        display: inline-grid;
+        place-items: center;
+        flex: 0 0 auto;
+        width: 44px;
+        height: 44px;
+        margin-left: auto;
+        padding: 0;
+        border: 1px solid #d7e3d2;
+        border-radius: 14px;
+        background: #f7faf5;
+        color: #4f6f43;
+        font: inherit;
+        font-size: 1.45rem;
+        line-height: 1;
+        cursor: pointer;
+        appearance: none;
+    }
+
+    .mobile-nav-toggle:hover {
+        background: #edf4e9;
+    }
+
+    .mobile-nav-toggle:focus-visible {
+        outline: 3px solid rgba(189, 119, 127, 0.34);
+        outline-offset: 3px;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 14px;
+        left: 14px;
+        z-index: 1100;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+
+        margin: 0;
+        padding: 10px;
+
+        border: 1px solid #d7e3d2;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 18px 40px rgba(47, 74, 42, 0.14);
+
+        overflow: visible;
+        scrollbar-width: auto;
+    }
+
+    .nav-menu.is-open {
+        display: flex;
+    }
+
+    .nav-link,
+    .home-btn {
+        width: 100%;
+        min-height: 48px;
+        box-sizing: border-box;
+        justify-content: flex-start;
+        padding: 13px 14px;
+        border-radius: 12px;
+        font-size: 0.94rem;
+        line-height: 1.2;
+        white-space: normal;
+    }
+
+    .nav-link {
+        color: #4f6f43;
+        background: transparent;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+        color: #42563d;
+        background: #f1f6ed;
+    }
+
+    .home-btn {
+        margin-top: 3px;
+        background: #719365;
+        color: #ffffff;
+    }
+
+    .home-btn:hover,
+    .home-btn:focus-visible {
+        background: #55784b;
+        color: #ffffff;
+    }
+
+    .dot {
+        display: none !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .topbar {
+        padding-inline: 10px;
+    }
+
+    .mobile-nav-toggle {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+    }
+
+    .nav-menu {
+        right: 10px;
+        left: 10px;
+    }
+}
+
+/* Desktop safeguard */
+@media (min-width: 821px) {
+    .nav-menu {
+        display: flex !important;
+    }
+}

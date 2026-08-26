@@ -1,0 +1,321 @@
+/* Planting photographic story */
+
+.planting-photo-story {
+    margin: 24px 0 30px;
+    padding: 22px 0 24px;
+    border-top: 1px solid #e5ede1;
+    border-bottom: 1px solid #e5ede1;
+}
+
+.photo-story-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 17px;
+}
+
+.photo-story-eyebrow {
+    margin-bottom: 4px;
+    color: #a06489;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.photo-story-heading {
+    margin: 0;
+    color: #42563d;
+    font-size: 1.22rem;
+    font-weight: 700;
+}
+
+.photo-story-description {
+    max-width: 610px;
+    margin: 6px 0 0;
+    color: #74816f;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.photo-story-scroll-hint {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 11px;
+    border: 1px solid #dce7d8;
+    border-radius: 999px;
+    color: #71806d;
+    background: #f8fbf6;
+    font-size: 0.72rem;
+    white-space: nowrap;
+}
+
+.photo-story-scroll-arrow {
+    color: #a06489;
+    font-size: 0.9rem;
+}
+
+.photo-story-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(220px, 28%);
+    gap: 15px;
+    padding: 4px 5px 14px 1px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #c8d7c3 #edf4e9;
+}
+
+.photo-story-track::-webkit-scrollbar {
+    height: 8px;
+}
+
+.photo-story-track::-webkit-scrollbar-track {
+    border-radius: 999px;
+    background: #edf4e9;
+}
+
+.photo-story-track::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: #c8d7c3;
+}
+
+.photo-story-card {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #dce7d8;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(67, 89, 61, 0.08);
+    scroll-snap-align: start;
+    transition: transform 160ms ease,
+        box-shadow 160ms ease,
+        border-color 160ms ease;
+}
+
+.photo-story-card:hover {
+    transform: translateY(-3px);
+    border-color: #c7d8c2;
+    box-shadow: 0 12px 27px rgba(67, 89, 61, 0.14);
+}
+
+.photo-story-card-latest {
+    border-color: #d8b2ca;
+    box-shadow: 0 9px 25px rgba(160, 100, 137, 0.13);
+}
+
+.photo-story-image-wrap {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #edf3e9;
+}
+
+.photo-story-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 260ms ease;
+}
+
+.photo-story-card:hover .photo-story-image {
+    transform: scale(1.035);
+}
+
+.photo-story-type {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 999px;
+    color: #42563d;
+    background: rgba(255, 255, 255, 0.91);
+    box-shadow: 0 3px 10px rgba(55, 75, 49, 0.14);
+    font-size: 0.68rem;
+    font-weight: 700;
+    backdrop-filter: blur(5px);
+}
+
+.photo-story-type-icon {
+    line-height: 1;
+}
+
+.photo-story-latest-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 8px;
+    border-radius: 999px;
+    color: #ffffff;
+    background: #a06489;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.photo-story-card-copy {
+    padding: 12px 13px 14px;
+}
+
+.photo-story-date {
+    margin-bottom: 3px;
+    color: #82907d;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.photo-story-card-title {
+    color: #42563d;
+    font-size: 0.91rem;
+    font-weight: 700;
+}
+
+.planting-photo-story-empty {
+    padding: 18px;
+    border: 1px dashed #cedcc9;
+    border-radius: 13px;
+    background: #f9fbf8;
+}
+
+.photo-story-empty {
+    margin: 0;
+    color: #74816f;
+    font-size: 0.88rem;
+}
+
+@media (max-width: 900px) {
+    .photo-story-track {
+        grid-auto-columns: minmax(215px, 46%);
+    }
+}
+
+@media (max-width: 620px) {
+    .photo-story-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 11px;
+    }
+
+    .photo-story-scroll-hint {
+        align-self: flex-start;
+    }
+
+    .photo-story-track {
+        grid-auto-columns: 82%;
+    }
+}
+
+/* About-page featured planting photo scroller */
+
+.featured-preview-photo-library {
+    min-width: 0;
+}
+
+.featured-preview-photo-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(240px, 78%);
+    gap: 14px;
+    overflow-x: auto;
+    padding: 2px 3px 12px;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #c6d5c1 #edf3e9;
+}
+
+.featured-preview-photo-track::-webkit-scrollbar {
+    height: 7px;
+}
+
+.featured-preview-photo-track::-webkit-scrollbar-track {
+    border-radius: 999px;
+    background: #edf3e9;
+}
+
+.featured-preview-photo-track::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: #c6d5c1;
+}
+
+.featured-preview-photo-card {
+    overflow: hidden;
+    border: 1px solid #d7e3d2;
+    border-radius: 15px;
+    background: #ffffff;
+    scroll-snap-align: start;
+}
+
+.featured-preview-image-wrap {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #edf3e9;
+}
+
+.featured-preview-photo-card .featured-preview-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.featured-preview-latest {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    color: #ffffff;
+    background: #a85f8b;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.featured-preview-photo-caption {
+    padding: 10px 12px 12px;
+}
+
+.featured-preview-photo-date {
+    margin-bottom: 2px;
+    color: #82907d;
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.featured-preview-photo-type {
+    color: #42563d;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.featured-preview-scroll-hint {
+    margin-top: 5px;
+    color: #7b8a76;
+    font-size: 0.73rem;
+    text-align: center;
+}
+
+@media (max-width: 650px) {
+    .featured-preview-photo-track {
+        grid-auto-columns: 88%;
+    }
+}
