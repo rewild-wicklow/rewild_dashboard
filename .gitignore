@@ -37,3 +37,6 @@ rewild/
 # Directories 
 data/*
 src/archived_pages
+
+# Dumb stuff 
+run_qgis.sh
