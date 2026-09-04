@@ -33,6 +33,7 @@ pip-delete-this-directory.txt
 
 # Environments
 .env
+.idea
 rewild/
 
 # Directories 
