@@ -19,7 +19,7 @@ From the repository root:
 
 ```bash
 conda env create -f rewild_environment.yml
-conda activate rewild
+conda activate rewild_environment
 ```
 
 To confirm that the environment is active:
