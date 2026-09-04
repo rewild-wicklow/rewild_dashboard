@@ -18,3 +18,4 @@ dependencies:
   - pip
   - pip:
       - python-dotenv==1.2.3
+      - dash-auth==2.0.0

@@ -1,3 +1,5 @@
+import os
+
 import dash
 from dash import Dash, html, dcc, Input, Output, State, callback
 import dash_bootstrap_components as dbc
@@ -5,12 +7,22 @@ import dash_leaflet as dl
 import dash_leaflet.express as dlx
 import pandas as pd
 import plotly.express as px
+import dash_auth
+from dotenv import load_dotenv
+
+load_dotenv()
+VALID_USERNAME_PASSWORD_PAIRS = [
+    (os.environ['BASIC_AUTH_USER'], os.environ['BASIC_AUTH_PASSWORD'])
+]
+
 
 app = Dash(
     __name__,
     use_pages=True,
     suppress_callback_exceptions=True
 )
+
+auth = dash_auth.BasicAuth(app,VALID_USERNAME_PASSWORD_PAIRS)
 
 server = app.server
 
