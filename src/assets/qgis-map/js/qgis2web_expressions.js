@@ -376,19 +376,19 @@ function fnc_strpos(values, context) {
 };
 
 function fnc_left(values, context) {
-    return false;
+    return String(values[0]).substr(0, values[1]);
 };
 
 function fnc_right(values, context) {
-    return false;
+    return String(values[0]).substr(0, values[1]);
 };
 
 function fnc_rpad(values, context) {
-    return false;
+    return String(values[0]).padEnd(values[1], values[2]);
 };
 
 function fnc_lpad(values, context) {
-    return false;
+    return String(values[0]).padStart(values[1], values[2]);
 };
 
 function fnc_format(values, context) {
@@ -757,7 +757,7 @@ function fnc_project_color(values, context) {
 
 
 
-function exp_label_Sites_2_eval_expression(context) {
+function exp_label_Sites_3_eval_expression(context) {
     // if(var('layout_name') = 'Sites Poster', display_name, Name)
 
     var feature = context.feature;
@@ -770,7 +770,7 @@ function exp_label_Sites_2_eval_expression(context) {
 }
 
 
-function exp_label_Sites_2_eval_expression(context) {
+function exp_label_Sites_3_eval_expression(context) {
     // if(var('layout_name') = 'Sites Poster', display_name, Name)
 
     var feature = context.feature;

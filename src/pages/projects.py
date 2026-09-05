@@ -22,7 +22,7 @@ MANAGEMENT_LABELS = {
     "never": "No visits required",
 }
 
-TIMELINE_PLANTINGS_FILE = Path("src/assets/qgis-map/data/Plantings_3.js")
+TIMELINE_PLANTINGS_FILE = Path("src/assets/qgis-map/data/Plantings_4.js")
 
 PHOTO_INDEX_FILE = Path("src/assets/qgis-map/data/planting_photo_index.js")
 

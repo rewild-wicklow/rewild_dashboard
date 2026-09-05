@@ -23,7 +23,7 @@ dash.register_page(
 )
 
 TIMELINE_PLANTINGS_FILE = Path(
-    "src/assets/qgis-map/data/Plantings_3.js"
+    "src/assets/qgis-map/data/Plantings_4.js"
 )
 
 PHOTO_INDEX_FILE = Path(

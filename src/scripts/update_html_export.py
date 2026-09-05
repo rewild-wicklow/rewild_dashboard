@@ -3,6 +3,8 @@ import json
 import re
 import shutil
 
+# NWW - work-around - git prooject is called rewild_dashboard - fix this fn to handle either
+# def find_project_root(project_name="rewild_dashboard"):
 def find_project_root(project_name="rewild"):
     current = Path(__file__).resolve()
 

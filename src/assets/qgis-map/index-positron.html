@@ -181,10 +181,10 @@
         <script src="js/leaflet-hash.js"></script>
         <script src="js/Autolinker.min.js"></script>
         <script src="js/leaflet.photon.js"></script>
-        <script src="data/WicklowMountainsNationalPark_0.js"></script>
-        <script src="data/CountyWicklow_1.js"></script>
-        <script src="data/Sites_2.js"></script>
-        <script src="data/Plantings_3.js"></script>
+        <script src="data/WicklowMountainsNationalPark_1.js"></script>
+        <script src="data/CountyWicklow_2.js"></script>
+        <script src="data/Sites_3.js"></script>
+        <script src="data/Plantings_4.js"></script>
         <script>
         
         var map = L.map('map', {
@@ -262,9 +262,20 @@
                 var src = imgTd.getAttribute('src');
                 if (/\.(jpg|jpeg|png|gif|bmp|webp|avif)$/i.test(src)) {
                     popup._contentNode.classList.add('media');
-                    setTimeout(function() {
-                        popup.update();
-                    }, 10);
+                    var img = popup._contentNode.querySelector('td img');
+                    if (img) {
+                        // If already loaded (cache), update immediately
+                        if (img.complete && img.naturalHeight > 0) {
+                            popup.update();
+                        } else {
+                            img.addEventListener('load', function() {
+                                popup.update();
+                            });
+                            img.addEventListener('error', function() {
+                                popup.update();
+                            });
+                        }
+                    }
                 } else if (/\.(mp3|wav|ogg|aac)$/i.test(src)) {
                     var audio = document.createElement('audio');
                     audio.controls = true;
@@ -392,7 +403,7 @@
 
         function setBounds() {
         }
-        function pop_WicklowMountainsNationalPark_0(feature, layer) {
+        function pop_WicklowMountainsNationalPark_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -447,26 +458,31 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_WicklowMountainsNationalPark_0_0() {
+        function style_WicklowMountainsNationalPark_1_0() {
             return {
-                pane: 'pane_WicklowMountainsNationalPark_0',
+                pane: 'pane_WicklowMountainsNationalPark_1',
+                opacity: 1,
+                color: 'rgba(80,150,80,1.0)',
+                weight: 2,
+                fillOpacity: 0,
                 interactive: false,
             }
+        
         }
-        map.createPane('pane_WicklowMountainsNationalPark_0');
-        map.getPane('pane_WicklowMountainsNationalPark_0').style.zIndex = 400;
-        map.getPane('pane_WicklowMountainsNationalPark_0').style['mix-blend-mode'] = 'normal';
-        var layer_WicklowMountainsNationalPark_0 = new L.geoJson(json_WicklowMountainsNationalPark_0, {
+        map.createPane('pane_WicklowMountainsNationalPark_1');
+        map.getPane('pane_WicklowMountainsNationalPark_1').style.zIndex = 401;
+        map.getPane('pane_WicklowMountainsNationalPark_1').style['mix-blend-mode'] = 'normal';
+        var layer_WicklowMountainsNationalPark_1 = new L.geoJson(json_WicklowMountainsNationalPark_1, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_WicklowMountainsNationalPark_0',
-            layerName: 'layer_WicklowMountainsNationalPark_0',
-            pane: 'pane_WicklowMountainsNationalPark_0',
-            style: style_WicklowMountainsNationalPark_0_0,
+            dataVar: 'json_WicklowMountainsNationalPark_1',
+            layerName: 'layer_WicklowMountainsNationalPark_1',
+            pane: 'pane_WicklowMountainsNationalPark_1',
+            style: style_WicklowMountainsNationalPark_1_0,
         });
-        bounds_group.addLayer(layer_WicklowMountainsNationalPark_0);
-        map.addLayer(layer_WicklowMountainsNationalPark_0);
-        function pop_CountyWicklow_1(feature, layer) {
+        bounds_group.addLayer(layer_WicklowMountainsNationalPark_1);
+        map.addLayer(layer_WicklowMountainsNationalPark_1);
+        function pop_CountyWicklow_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -515,33 +531,31 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_CountyWicklow_1_0() {
+        function style_CountyWicklow_2_0() {
             return {
-                pane: 'pane_CountyWicklow_1',
+                pane: 'pane_CountyWicklow_2',
                 opacity: 1,
                 color: 'rgba(159,203,152,1.0)',
-                dashArray: '',
-                lineCap: 'round',
-                lineJoin: 'round',
-                weight: 2.0,
+                weight: 2,
                 fillOpacity: 0,
                 interactive: false,
             }
+        
         }
-        map.createPane('pane_CountyWicklow_1');
-        map.getPane('pane_CountyWicklow_1').style.zIndex = 401;
-        map.getPane('pane_CountyWicklow_1').style['mix-blend-mode'] = 'normal';
-        var layer_CountyWicklow_1 = new L.geoJson(json_CountyWicklow_1, {
+        map.createPane('pane_CountyWicklow_2');
+        map.getPane('pane_CountyWicklow_2').style.zIndex = 402;
+        map.getPane('pane_CountyWicklow_2').style['mix-blend-mode'] = 'normal';
+        var layer_CountyWicklow_2 = new L.geoJson(json_CountyWicklow_2, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_CountyWicklow_1',
-            layerName: 'layer_CountyWicklow_1',
-            pane: 'pane_CountyWicklow_1',
-            style: style_CountyWicklow_1_0,
+            dataVar: 'json_CountyWicklow_2',
+            layerName: 'layer_CountyWicklow_2',
+            pane: 'pane_CountyWicklow_2',
+            style: style_CountyWicklow_2_0,
         });
-        bounds_group.addLayer(layer_CountyWicklow_1);
-        map.addLayer(layer_CountyWicklow_1);
-        function pop_Sites_2(feature, layer) {
+        bounds_group.addLayer(layer_CountyWicklow_2);
+        map.addLayer(layer_CountyWicklow_2);
+        function pop_Sites_3(feature, layer) {
 
             layer.on('click', function() {
                 var message = {
@@ -796,7 +810,7 @@
             });
 
         }
-        function style_Sites_2_0(feature) {
+        function style_Sites_3_0(feature) {
             var managementType = String(feature.properties['Management Type'] || '').trim().toLowerCase();
 
             var iconFile = {
@@ -810,7 +824,7 @@
             }[managementType] || 'tree_purple.svg';
 
             return {
-                pane: 'pane_Sites_2',
+                pane: 'pane_Sites_3',
                 rotationAngle: 0.0,
                 rotationOrigin: 'center center',
                 icon: L.icon({
@@ -823,27 +837,27 @@
             };
         }
 
-        map.createPane('pane_Sites_2');
-        map.getPane('pane_Sites_2').style.zIndex = 402;
-        map.getPane('pane_Sites_2').style['mix-blend-mode'] = 'normal';
-        var layer_Sites_2 = new L.geoJson(json_Sites_2, {
+        map.createPane('pane_Sites_3');
+        map.getPane('pane_Sites_3').style.zIndex = 403;
+        map.getPane('pane_Sites_3').style['mix-blend-mode'] = 'normal';
+        var layer_Sites_3 = new L.geoJson(json_Sites_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Sites_2',
-            layerName: 'layer_Sites_2',
-            pane: 'pane_Sites_2',
-            onEachFeature: pop_Sites_2,
+            dataVar: 'json_Sites_3',
+            layerName: 'layer_Sites_3',
+            pane: 'pane_Sites_3',
+            onEachFeature: pop_Sites_3,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_Sites_2_0(feature));
+                return L.marker(latlng, style_Sites_3_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Sites_2);
-        map.addLayer(layer_Sites_2);
-        function pop_Plantings_3(feature, layer) {
+        bounds_group.addLayer(layer_Sites_3);
+        map.addLayer(layer_Sites_3);
+        function pop_Plantings_4(feature, layer) {
 
             
             layer.on('click', function() {
@@ -1046,7 +1060,7 @@
 
         }
 
-        function style_Plantings_3_0(feature) {
+        function style_Plantings_4_0(feature) {
             var protection = String(
                 (feature.properties || {})['Protection'] || ''
             ).trim().toLowerCase();
@@ -1132,36 +1146,37 @@
         map.getPane('pane_planting_exclosure').style.zIndex = 407;
         map.getPane('pane_planting_exclosure').style['mix-blend-mode'] = 'normal';
 
-        var layer_Plantings_3 = new L.geoJson(json_Plantings_3, {
+        var layer_Plantings_4 = new L.geoJson(json_Plantings_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Plantings_3',
-            layerName: 'layer_Plantings_3',
-            onEachFeature: pop_Plantings_3,
-            style: style_Plantings_3_0,
+            dataVar: 'json_Plantings_4',
+            layerName: 'layer_Plantings_4',
+            onEachFeature: pop_Plantings_4,
+            style: style_Plantings_4_0,
         });
-        bounds_group.addLayer(layer_Plantings_3);
-        map.addLayer(layer_Plantings_3);
+        bounds_group.addLayer(layer_Plantings_4);
+        map.addLayer(layer_Plantings_4);
         map.on("zoomend", function(e) {
             if (map.getZoom() <= 19 && map.getZoom() >= 13) {
-                map.addLayer(layer_Plantings_3);
+                map.addLayer(layer_Plantings_4);
             } else if (map.getZoom() > 19 || map.getZoom() < 13) {
-                map.addLayer(layer_Plantings_3);
+                map.addLayer(layer_Plantings_4);
             }
         });
             if (map.getZoom() <= 19 && map.getZoom() >= 13) {
-                map.addLayer(layer_Plantings_3);
+                map.addLayer(layer_Plantings_4);
             } else if (map.getZoom() > 19 || map.getZoom() < 13) {
-                map.addLayer(layer_Plantings_3);
+                map.addLayer(layer_Plantings_4);
             }
         var overlaysTree = [
-            {label: 'Plantings<br /><table><tr><td style="text-align: center;"><img src="legend/Plantings_3_Anexclosure0.png" /></td><td>An exclosure</td></tr><tr><td style="text-align: center;"><img src="legend/Plantings_3_AnareaofCages1.png" /></td><td>An area of Cages</td></tr><tr><td style="text-align: center;"><img src="legend/Plantings_3_AnareaofTubes2.png" /></td><td>An area of Tubes</td></tr><tr><td style="text-align: center;"><img src="legend/Plantings_3_NoProtection3.png" /></td><td>No Protection</td></tr></table>', layer: layer_Plantings_3},
-            {label: 'Sites<br /><table><tr><td style="text-align: center;"><img src="markers/tree_red.svg" style="width:19px;height:19px;" /></td><td>Regular visits from RW</td></tr><tr><td style="text-align: center;"><img src="markers/tree_yellow.svg" style="width:19px;height:19px;" /></td><td>Sporadic visits from RW, Monitored locally</td></tr><tr><td style="text-align: center;"><img src="markers/tree_light_blue.svg" style="width:19px;height:19px;" /></td><td>Annual visit from RW, Maintained Locally</td></tr><tr><td style="text-align: center;"><img src="markers/tree_gray.svg" style="width:19px;height:19px;" /></td><td>No visits required</td></tr><tr><td style="text-align: center;"><img src="markers/tree_purple.svg" style="width:19px;height:19px;" /></td><td>Undetermined</td></tr></table>', layer: layer_Sites_2},
-            {label: '<img src="legend/CountyWicklow_1.png" /> County Wicklow', layer: layer_CountyWicklow_1},
+            {label: 'Plantings<br /><table><tr><td style="text-align: center;"><img src="legend/Plantings_4_Anexclosure0.png" /></td><td>An exclosure</td></tr><tr><td style="text-align: center;"><img src="legend/Plantings_4_AnareaofCages1.png" /></td><td>An area of Cages</td></tr><tr><td style="text-align: center;"><img src="legend/Plantings_4_AnareaofTubes2.png" /></td><td>An area of Tubes</td></tr><tr><td style="text-align: center;"><img src="legend/Plantings_4_NoProtection3.png" /></td><td>No Protection</td></tr></table>', layer: layer_Plantings_4},
+            {label: 'Sites<br /><table><tr><td style="text-align: center;"><img src="markers/tree_red.svg" style="width:19px;height:19px;" /></td><td>Regular visits from RW</td></tr><tr><td style="text-align: center;"><img src="markers/tree_yellow.svg" style="width:19px;height:19px;" /></td><td>Sporadic visits from RW, Monitored locally</td></tr><tr><td style="text-align: center;"><img src="markers/tree_light_blue.svg" style="width:19px;height:19px;" /></td><td>Annual visit from RW, Maintained Locally</td></tr><tr><td style="text-align: center;"><img src="markers/tree_gray.svg" style="width:19px;height:19px;" /></td><td>No visits required</td></tr><tr><td style="text-align: center;"><img src="markers/tree_purple.svg" style="width:19px;height:19px;" /></td><td>Undetermined</td></tr></table>', layer: layer_Sites_3},
+            {label: '<img src="legend/CountyWicklow_2.png" /> County Wicklow', layer: layer_CountyWicklow_2},
         {label: '<b>External Datasets</b>',  selectAllCheckbox: true, children: [
-            {label: '<img src="legend/WicklowMountainsNationalPark_0.png" /> Wicklow Mountains National Park', layer: layer_WicklowMountainsNationalPark_0},
+            {label: '<img src="legend/WicklowMountainsNationalPark_1.png" /> Wicklow Mountains National Park', layer: layer_WicklowMountainsNationalPark_1},
             {label: 'Carto Positron', layer: layer_Basemap_0},
-]},]
+]},
+        {label: '<b>Base Layers</b>',  selectAllCheckbox: true, children: []},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -1224,24 +1239,24 @@
         });       
         map.on("zoomend", function(){
 
-                if (map.hasLayer(layer_Sites_2)) {
+                if (map.hasLayer(layer_Sites_3)) {
                     if (map.getZoom() <= 11 && map.getZoom() >= 19) {
-                        layer_Sites_2.eachLayer(function (layer) {
+                        layer_Sites_3.eachLayer(function (layer) {
                             layer.openTooltip();
                         });
                     } else {
-                        layer_Sites_2.eachLayer(function (layer) {
+                        layer_Sites_3.eachLayer(function (layer) {
                             layer.closeTooltip();
                         });
                     }
                 }
-                if (map.hasLayer(layer_Plantings_3)) {
+                if (map.hasLayer(layer_Plantings_4)) {
                     if (map.getZoom() <= 16 && map.getZoom() >= 19) {
-                        layer_Plantings_3.eachLayer(function (layer) {
+                        layer_Plantings_4.eachLayer(function (layer) {
                             layer.openTooltip();
                         });
                     } else {
-                        layer_Plantings_3.eachLayer(function (layer) {
+                        layer_Plantings_4.eachLayer(function (layer) {
                             layer.closeTooltip();
                         });
                     }
@@ -1249,7 +1264,7 @@
         });
         setBounds();
         var i = 0;
-        layer_Sites_2.eachLayer(function(layer) {
+        layer_Sites_3.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
@@ -1262,7 +1277,7 @@
               i++;
         });
         var i = 0;
-        layer_Plantings_3.eachLayer(function(layer) {
+        layer_Plantings_4.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
@@ -1274,24 +1289,24 @@
               addLabel(layer, i);
               i++;
         });
-                if (map.hasLayer(layer_Sites_2)) {
+                if (map.hasLayer(layer_Sites_3)) {
                     if (map.getZoom() <= 11 && map.getZoom() >= 19) {
-                        layer_Sites_2.eachLayer(function (layer) {
+                        layer_Sites_3.eachLayer(function (layer) {
                             layer.openTooltip();
                         });
                     } else {
-                        layer_Sites_2.eachLayer(function (layer) {
+                        layer_Sites_3.eachLayer(function (layer) {
                             layer.closeTooltip();
                         });
                     }
                 }
-                if (map.hasLayer(layer_Plantings_3)) {
+                if (map.hasLayer(layer_Plantings_4)) {
                     if (map.getZoom() <= 16 && map.getZoom() >= 19) {
-                        layer_Plantings_3.eachLayer(function (layer) {
+                        layer_Plantings_4.eachLayer(function (layer) {
                             layer.openTooltip();
                         });
                     } else {
-                        layer_Plantings_3.eachLayer(function (layer) {
+                        layer_Plantings_4.eachLayer(function (layer) {
                             layer.closeTooltip();
                         });
                     }

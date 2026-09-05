@@ -194,33 +194,12 @@
             justify-content: center;
             align-items: center;
         }
-        .css_Sites_2 {
-            text-shadow: -2px -2px 0 #000000,
-                -2px -1px 0 #000000,
-                -2px 0px 0 #000000,
-                -2px 1px 0 #000000,
-                -2px 2px 0 #000000,
-                -1px -2px 0 #000000,
-                -1px -1px 0 #000000,
-                -1px 0px 0 #000000,
-                -1px 1px 0 #000000,
-                -1px 2px 0 #000000,
-                0px -2px 0 #000000,
-                0px -1px 0 #000000,
-                0px 1px 0 #000000,
-                0px 2px 0 #000000,
-                1px -2px 0 #000000,
-                1px -1px 0 #000000,
-                1px 0px 0 #000000,
-                1px 1px 0 #000000,
-                1px 2px 0 #000000,
-                2px -2px 0 #000000,
-                2px -1px 0 #000000,
-                2px 0px 0 #000000,
-                2px 1px 0 #000000,
-                2px 2px 0 #000000;
+        .leaflet-marker-icon{
+            white-space: nowrap;
         }
-        .css_Plantings_3 {
+        
+        .css_Sites_3 {
+            pointer-events: none!important;
             text-shadow: -2px -2px 0 #000000,
                 -2px -1px 0 #000000,
                 -2px 0px 0 #000000,
