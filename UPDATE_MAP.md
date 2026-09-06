@@ -117,7 +117,7 @@ src/assets/markers/
 Start the app:
 
 ```bash
-python src/app.py
+gunicorn app:server
 ```
 
 Check at minimum:

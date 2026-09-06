@@ -1,4 +1,4 @@
-name: rewild_environment
+name: rewild_dashboard
 channels:
   - conda-forge
 dependencies:
@@ -15,6 +15,7 @@ dependencies:
   - shapely
   - pyproj
   - sqlite
+  - gunicorn=25.0.1
   - pip
   - pip:
       - python-dotenv==1.2.3

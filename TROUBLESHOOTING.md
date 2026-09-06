@@ -11,13 +11,13 @@ conda --version
 Then retry:
 
 ```bash
-conda env create -f rewild_environment.yml
+conda env create -f environment.yml
 ```
 
-If the `rewild` environment already exists, update it instead:
+If the `rewild_dashboard` environment already exists, update it instead:
 
 ```bash
-conda env update -n rewild -f rewild_environment.yml --prune
+conda env update -f environment.yml --prune
 ```
 
 ## `ModuleNotFoundError` when running the app
@@ -25,8 +25,8 @@ conda env update -n rewild -f rewild_environment.yml --prune
 Activate the project environment first:
 
 ```bash
-conda activate rewild
-python src/app.py
+conda activate rewild_dashboard
+gunicorn app:server
 ```
 
 ## qgis2web export fails with a geometry error

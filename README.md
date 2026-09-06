@@ -11,15 +11,15 @@ Install these separately before starting:
 - The **qgis2web** QGIS plugin
 - Access to the ReWild Wicklow project in Mergin Maps
 
-Python dependencies are managed with `rewild_environment.yml`.
+Python dependencies are managed with `environment.yml`.
 
 ## First-time setup
 
 From the repository root:
 
 ```bash
-conda env create -f rewild_environment.yml
-conda activate rewild_environment
+conda env create -f environment.yml
+conda activate rewild_dashboard
 ```
 
 To confirm that the environment is active:
@@ -30,10 +30,10 @@ python --version
 
 The project uses Python 3.11.
 
-If `rewild_environment.yml` changes later, update the existing environment with:
+If `environment.yml` changes later, update the existing environment with:
 
 ```bash
-conda env update -f rewild_environment.yml --prune
+conda env update -f environment.yml --prune
 ```
 
 ## Run the dashboard
@@ -41,8 +41,8 @@ conda env update -f rewild_environment.yml --prune
 From the repository root:
 
 ```bash
-conda activate rewild
-python src/app.py
+conda activate rewild_dashboard
+gunicorn app:server
 ```
 
 Open the local address printed in the terminal. Dash normally uses `http://127.0.0.1:8050/`.
