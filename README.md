@@ -15,6 +15,7 @@ Python dependencies are managed with `environment.yml`.
 
 ## First-time setup
 
+### Dependencies
 From the repository root:
 
 ```bash
@@ -35,6 +36,13 @@ If `environment.yml` changes later, update the existing environment with:
 ```bash
 conda env update -f environment.yml --prune
 ```
+### Environment Variables
+ Create the following `.env` file in the project root
+```env
+BASIC_AUTH_USER=user
+BASIC_AUTH_PASSWORD=password
+```
+
 
 ## Run the dashboard
 
@@ -45,7 +53,7 @@ conda activate rewild_dashboard
 gunicorn app:server
 ```
 
-Open the local address printed in the terminal. Dash normally uses `http://127.0.0.1:8050/`.
+Open the local address printed in the terminal. Gunicorn normally uses `http://127.0.0.1:8000/`.
 
 ## Update the map from Mergin Maps
 
@@ -78,8 +86,7 @@ rewild/
 │   │   ├── build_planting_photo_index.py
 │   │   └── update_html_export.py
 │   └── utils/                  # Shared Python utilities
-├── requirements.txt            # Python-only dependency reference
-└── rewild_environment.yml      # Recommended Conda environment
+└── environment.yml             # Conda environment
 ```
 
 ## Important generated files
