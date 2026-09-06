@@ -43,7 +43,6 @@ BASIC_AUTH_USER=user
 BASIC_AUTH_PASSWORD=password
 ```
 
-
 ## Run the dashboard
 
 From the repository root:
@@ -54,6 +53,25 @@ gunicorn app:server
 ```
 
 Open the local address printed in the terminal. Gunicorn normally uses `http://127.0.0.1:8000/`.
+
+### Run the dashboard via Docker
+A docker image is build by `./Dockerfile`, and this is used in the production deployment.
+
+If you wish to test it locally - 
+
+Ensure Docker is installed and running 
+
+Build the image from the repository root:
+
+```bash
+docker build -t rewild_dashboard .
+```
+
+Run the image:
+
+```bash
+docker run -e 'BASIC_AUTH_USER=user' -e 'BASIC_AUTH_PASSWORD=password' -p 8000:8000 rewild_dashboard
+```
 
 ## Update the map from Mergin Maps
 
