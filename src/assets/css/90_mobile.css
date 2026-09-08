@@ -864,7 +864,7 @@
     }
 
     .page-content {
-        padding-inline: 12px;
+        padding-inline: 0;
     }
 
     .tree-guide-page {
