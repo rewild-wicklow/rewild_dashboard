@@ -409,12 +409,16 @@
         min-height: calc(100vh - 74px);
         padding: 12px 0px 12px;
     }
-    .projects-guide-pill {
+    .projects-guide-pill,
+    .projects-map-note {
         display: none;
     }
 
-    .projects-map-section {
-        padding: 12px 2px 2px;
+    .projects-map-section,
+    .projects-map-card {
+        padding: 0;
+        border-radius: 0;
+        /*border: none;*/
     }
     /* Volunteer cards: concise stack, accordion-first */
     .data-page {
@@ -459,6 +463,7 @@
         height: 58vh;
         min-height: 380px;
         max-height: 500px;
+        border-radius: 0;
     }
 
     .projects-map-heading {
