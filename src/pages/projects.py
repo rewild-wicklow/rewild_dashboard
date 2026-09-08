@@ -923,7 +923,7 @@ layout = html.Div(
                                     className="projects-map-note-label",
                                 ),
                                 html.P(
-                                    "Hover over a tree marker to view a project "
+                                    "Select a tree marker to view a project "
                                     "site, or select a planting area "
                                     "to see more detailed planting records.",
                                     className="projects-map-note-text",

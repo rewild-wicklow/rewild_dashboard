@@ -49,7 +49,7 @@ From the repository root:
 
 ```bash
 conda activate rewild_dashboard
-gunicorn app:server
+gunicorn --reload app:server
 ```
 
 Open the local address printed in the terminal. Gunicorn normally uses `http://127.0.0.1:8000/`.

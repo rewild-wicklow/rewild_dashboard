@@ -404,6 +404,18 @@
    --------------------------------------------------------- */
 
 @media (max-width: 620px) {
+
+    .page-content {
+        min-height: calc(100vh - 74px);
+        padding: 12px 0px 12px;
+    }
+    .projects-guide-pill {
+        display: none;
+    }
+
+    .projects-map-section {
+        padding: 12px 2px 2px;
+    }
     /* Volunteer cards: concise stack, accordion-first */
     .data-page {
         padding-inline: 10px;
